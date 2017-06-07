@@ -93,9 +93,9 @@ public class PetModel extends AbstractTableModel{
 		return lista.get(idx);
 	}
 	
-	public void remover(Pet contatoSelecionado){
+	public void remover(Pet petSelecionado){
 		
-		this.lista.remove(contatoSelecionado);
+		this.lista.remove(petSelecionado);
 		
 		super.fireTableDataChanged();
 	}

@@ -24,7 +24,7 @@ public class PrincipalBase extends JFrame{
 	private JPanel contentPane;
 	protected JTextField txfId;
 	protected JTextField txfNome;
-	protected JTextField txfTelefone;
+	protected JTextField txfEspecie;
 	protected JTable table;
 	protected JButton btnNovo;
 	protected JButton btnSalvar;
@@ -126,15 +126,15 @@ public class PrincipalBase extends JFrame{
 		gbc_lblTelefone.gridy = 2;
 		panel.add(lblTelefone, gbc_lblTelefone);
 		
-		txfTelefone = new JTextField();
+		txfEspecie = new JTextField();
 		GridBagConstraints gbc_txfTelefone = new GridBagConstraints();
 		gbc_txfTelefone.gridwidth = 2;
 		gbc_txfTelefone.insets = new Insets(0, 0, 0, 5);
 		gbc_txfTelefone.anchor = GridBagConstraints.WEST;
 		gbc_txfTelefone.gridx = 1;
 		gbc_txfTelefone.gridy = 2;
-		panel.add(txfTelefone, gbc_txfTelefone);
-		txfTelefone.setColumns(15);
+		panel.add(txfEspecie, gbc_txfTelefone);
+		txfEspecie.setColumns(15);
 		
 		JPanel panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
