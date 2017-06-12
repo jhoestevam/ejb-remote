@@ -34,6 +34,6 @@ public class RemoteEJBCleint {
 		jndiProperties.put(Context.URL_PKG_PREFIXES, "org.jboss.ejb.client.naming");
 		final Context context = new InitialContext(jndiProperties);
 		
-		return (PetDao) context.lookup("ejb:/QuatroPatasServer/PetDaoImpl!");
+		return (PetDao) context.lookup("ejb:/QuatroPatasServer/PetDaoImpl!" + PetDao.class.getName());
 	}
 }

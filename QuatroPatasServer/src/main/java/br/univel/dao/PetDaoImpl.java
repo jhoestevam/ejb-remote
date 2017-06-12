@@ -27,7 +27,7 @@ public class PetDaoImpl implements PetDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Pet> getTodosAnimais() {
-		Query query = entity.createQuery("from cad_pet");
+		Query query = entity.createQuery("from Pet");
 		
 		return query.getResultList();
 	}
