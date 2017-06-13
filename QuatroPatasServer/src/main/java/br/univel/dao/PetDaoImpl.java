@@ -6,7 +6,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
+import javax.persistence.Query;
 
 import br.univel.model.Pet;
 
@@ -28,10 +28,9 @@ public class PetDaoImpl implements PetDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Pet> getTodosAnimais(){
-//		Query query = entity.createQuery("select id, nome, especie from cad_pet");
-//		
-//		return query.getResultList();
-		return null;
+		Query query = entity.createQuery("select id, nome, especie from cad_pet");
+		
+		return query.getResultList();
 	}
 	
 }
