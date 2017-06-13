@@ -1,4 +1,4 @@
-	package br.univel.dao;
+package br.univel.dao;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.univel.model.Pet;
 
@@ -16,6 +16,7 @@ public class PetDaoImpl implements PetDao{
 
 	@PersistenceContext(name="persiste-unit")
 	EntityManager entity;
+	
 
 	@Override
 	public Pet salvar(Pet pet) {
@@ -26,10 +27,11 @@ public class PetDaoImpl implements PetDao{
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<Pet> getTodosAnimais() {
-		Query query = entity.createQuery("select id, nome, especie from cad_pet");
-		
-		return query.getResultList();
+	public List<Pet> getTodosAnimais(){
+//		Query query = entity.createQuery("select id, nome, especie from cad_pet");
+//		
+//		return query.getResultList();
+		return null;
 	}
 	
 }

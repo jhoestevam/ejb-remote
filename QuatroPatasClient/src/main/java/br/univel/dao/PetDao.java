@@ -9,4 +9,5 @@ public interface PetDao {
 	Pet salvar(Pet pet);
 	
 	List<Pet> getTodosAnimais();
+	
 }
