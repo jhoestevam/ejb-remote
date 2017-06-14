@@ -7,9 +7,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-
 import br.univel.dao.PetDaoImpl;
 import br.univel.model.Pet;
 import br.univel.model.PetModel;
