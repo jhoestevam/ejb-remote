@@ -28,9 +28,39 @@ public class PetDaoImpl implements PetDao{
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Pet> getTodosAnimais(){
-		Query query = entity.createQuery("from Pet");
 		
-		return query.getResultList();
+		Query query = entity.createQuery("from Pet");
+		List<Pet> list = query.getResultList();
+		for (Pet pet : list) {
+			System.out.println(pet);
+		}
+		
+		return list;
+	}
+
+	@Override
+	public void update(Pet pet) {
+		Query query = entity.createQuery("udpate Pet set nome = :nome");
+		
+		
+	}
+
+	@Override
+	public void delete(Pet pet) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<Pet> select(Pet pet) {
+		Query query = entity.createQuery("select name from Pet where name = name");
+		List<Pet> list = query.getResultList();
+		for (Pet petResultName: list) {
+			System.out.println(petResultName);
+		}
+		
+		return list;
 	}
 	
 }
