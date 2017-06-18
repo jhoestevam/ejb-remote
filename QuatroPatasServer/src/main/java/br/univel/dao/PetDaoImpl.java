@@ -29,13 +29,14 @@ public class PetDaoImpl implements PetDao{
 	@SuppressWarnings("unchecked")
 	public List<Pet> getTodosAnimais(){
 		
-		Query query = entity.createQuery("from Pet");
-		List<Pet> list = query.getResultList();
-		for (Pet pet : list) {
-			System.out.println(pet);
-		}
-		
-		return list;
+//		Query query = entity.createQuery("from Pet");
+//		List<Pet> list = query.getResultList();
+//		for (Pet pet : list) {
+//			System.out.println(pet);
+//		}
+//		
+//		return list;
+		return null;
 	}
 
 	@Override
@@ -47,8 +48,7 @@ public class PetDaoImpl implements PetDao{
 
 	@Override
 	public void delete(Pet pet) {
-		// TODO Auto-generated method stub
-		
+		entity.remove(pet);
 	}
 
 	@Override
