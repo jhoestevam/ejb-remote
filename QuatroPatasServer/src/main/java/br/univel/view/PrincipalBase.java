@@ -21,17 +21,23 @@ public class PrincipalBase extends JFrame{
 
 	private static final long serialVersionUID = 115499095209949169L;
 	protected static final String CARREGADO_PARA_ALTERACAO = "Carregado para alteração";
+	
 	private JPanel contentPane;
+	
 	protected JTextField txfId;
 	protected JTextField txfNome;
 	protected JTextField txfEspecie;
+	
 	protected JTable table;
+	
 	protected JButton btnNovo;
 	protected JButton btnSalvar;
 	protected JButton btnExcluir;
+	
 	protected JLabel labelAlerta;
-	private JMenuBar menuBar;
+	
 	private JMenu mnArquivo;
+	private JMenuBar menuBar;
 	protected JMenuItem mntmImprimir;
 	protected JMenuItem mntmExportarPdf;
 
@@ -118,13 +124,13 @@ public class PrincipalBase extends JFrame{
 		panel.add(txfNome, gbc_txfNome);
 		txfNome.setColumns(10);
 		
-		JLabel lblTelefone = new JLabel("Telefone");
+		JLabel lblEspecie = new JLabel("Especie");
 		GridBagConstraints gbc_lblTelefone = new GridBagConstraints();
 		gbc_lblTelefone.anchor = GridBagConstraints.EAST;
 		gbc_lblTelefone.insets = new Insets(0, 0, 0, 5);
 		gbc_lblTelefone.gridx = 0;
 		gbc_lblTelefone.gridy = 2;
-		panel.add(lblTelefone, gbc_lblTelefone);
+		panel.add(lblEspecie, gbc_lblTelefone);
 		
 		txfEspecie = new JTextField();
 		GridBagConstraints gbc_txfTelefone = new GridBagConstraints();
