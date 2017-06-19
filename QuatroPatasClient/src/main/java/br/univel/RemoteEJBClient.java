@@ -10,7 +10,7 @@ import javax.naming.NamingException;
 import br.univel.dao.PetDao;
 import br.univel.model.Pet;
 
-public class RemoteEJBCleint {
+public class RemoteEJBClient {
 
 	public static void main(String[] args) throws Exception{
 		invokeStatelessBean();
