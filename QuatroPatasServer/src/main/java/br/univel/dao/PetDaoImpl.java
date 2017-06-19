@@ -34,13 +34,6 @@ public class PetDaoImpl implements PetDao{
 		return query.getResultList();
 	}
 
-//	@Override
-//	public void update(Pet pet) {
-//		Query query = entity.createQuery("udpate Pet set nome = :nome");
-//		
-//		
-//	}
-
 	@Override
 	public void delete(Pet pet) {
 		entity.remove(pet);
