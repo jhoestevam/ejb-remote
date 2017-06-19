@@ -7,6 +7,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.univel.model.Pet;
 
@@ -14,20 +15,22 @@ import br.univel.model.Pet;
 @Remote(PetDao.class)
 public class PetDaoImpl implements PetDao{
 
-	@PersistenceContext(name="persiste-unit")
+	@PersistenceContext(unitName = "persistence-unit")
 	EntityManager entity;
 	
 
 	@Override
 	public Pet salvar(Pet pet) {
+//		this.entity.persist(pet);
 		entity.persist(pet);
 		return pet;
 	}
 
 	@Override
-	@SuppressWarnings("unchecked")
+//	@SuppressWarnings("unchecked")
 	public List<Pet> getTodosAnimais(){
-		Query query = entity.createQuery("from Pet");
+		TypedQuery<Pet> query = this.entity.createQuery("select id, nome, especie from Pet", Pet.class);
+//		Query query = entity.createQuery("from Pet");
 		return query.getResultList();
 	}
 

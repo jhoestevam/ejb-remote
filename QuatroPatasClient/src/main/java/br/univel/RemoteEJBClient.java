@@ -22,7 +22,6 @@ public class RemoteEJBClient {
 		
 		dao.getTodosAnimais();
 		List<Pet> lista = dao.getTodosAnimais();
-		
 		for (Pet p: lista) {
 			System.out.println(p.toString());
 		}
