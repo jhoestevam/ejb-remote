@@ -21,30 +21,22 @@ public class PetDaoImpl implements PetDao{
 	@Override
 	public Pet salvar(Pet pet) {
 		entity.persist(pet);
-		
 		return pet;
 	}
 
 	@Override
 	@SuppressWarnings("unchecked")
 	public List<Pet> getTodosAnimais(){
-		
-//		Query query = entity.createQuery("from Pet");
-//		List<Pet> list = query.getResultList();
-//		for (Pet pet : list) {
-//			System.out.println(pet);
-//		}
-//		
-//		return list;
-		return null;
+		Query query = entity.createQuery("from Pet");
+		return query.getResultList();
 	}
 
-	@Override
-	public void update(Pet pet) {
-		Query query = entity.createQuery("udpate Pet set nome = :nome");
-		
-		
-	}
+//	@Override
+//	public void update(Pet pet) {
+//		Query query = entity.createQuery("udpate Pet set nome = :nome");
+//		
+//		
+//	}
 
 	@Override
 	public void delete(Pet pet) {
@@ -56,11 +48,18 @@ public class PetDaoImpl implements PetDao{
 	public List<Pet> select(Pet pet) {
 		Query query = entity.createQuery("select name from Pet where name = name");
 		List<Pet> list = query.getResultList();
-		for (Pet petResultName: list) {
-			System.out.println(petResultName);
-		}
+		list.forEach(e -> {
+			System.out.println(e);
+		});
 		
 		return list;
+	}
+
+	@Override
+	public Pet insert(Pet pet) {
+//		Query query = entity.createQuery("insert into Pet(id, nome, especie) ");
+		
+		return null;
 	}
 	
 }

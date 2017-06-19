@@ -10,9 +10,10 @@ public interface PetDao {
 	
 	List<Pet> getTodosAnimais();
 	
-	void update(Pet pet);
-	
 	void delete(Pet pet);
 	
 	List<Pet> select(Pet pet);
+	
+	Pet insert(Pet pet);
+	
 }

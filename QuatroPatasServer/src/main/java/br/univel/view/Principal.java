@@ -7,10 +7,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 
+import javax.ejb.EJB;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
-import br.univel.dao.PetDaoImpl;
+import br.univel.dao.PetDao;
 import br.univel.model.Pet;
 import br.univel.model.PetModel;
 
@@ -19,6 +20,9 @@ public class Principal extends PrincipalBase{
 	private static final long serialVersionUID = 115499095209949169L;
 
 	private Pet petSelecionado;
+	
+	@EJB
+	private PetDao dao;
 	
 	private PetModel modelo;
 	
@@ -43,7 +47,6 @@ public class Principal extends PrincipalBase{
 	}
 	
 	private void configuraTabela() {
-		PetDaoImpl dao = new PetDaoImpl();
 		List<Pet> lista = dao.getTodosAnimais();
 		
 		this.modelo = new PetModel(lista);
@@ -142,6 +145,19 @@ public class Principal extends PrincipalBase{
 	}
 	
 	protected void novo() {
+		Pet p = new Pet();
+		
+		String strId = txfId.getText().trim();
+		String strNome = txfNome.getText().trim();
+		String strEspecie = txfEspecie.getText().trim();
+		
+		int intId = Integer.parseInt(strId);
+		
+		p.setId(intId);
+		p.setNome(strNome);
+		p.setEspecie(strEspecie);
+		
+		this.modelo.adicionar(p);
 		
 		this.petSelecionado = null;
 		
