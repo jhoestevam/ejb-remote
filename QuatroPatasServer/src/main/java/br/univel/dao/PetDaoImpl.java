@@ -17,7 +17,6 @@ public class PetDaoImpl implements PetDao{
 
 	@PersistenceContext(unitName = "persistence-unit")
 	EntityManager entity;
-	
 
 	@Override
 	public Pet salvar(Pet pet) {
@@ -31,7 +30,7 @@ public class PetDaoImpl implements PetDao{
 	public List<Pet> getTodosAnimais(){
 		TypedQuery<Pet> query = this.entity.createQuery("select id, nome, especie from Pet", Pet.class);
 //		Query query = entity.createQuery("from Pet");
-		return query.getResultList();
+		return query.getResultList(); 
 	}
 
 	@Override
@@ -54,7 +53,6 @@ public class PetDaoImpl implements PetDao{
 	@Override
 	public Pet insert(Pet pet) {
 //		Query query = entity.createQuery("insert into Pet(id, nome, especie) ");
-		
 		return null;
 	}
 	
